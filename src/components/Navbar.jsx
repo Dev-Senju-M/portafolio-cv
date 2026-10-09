@@ -13,32 +13,40 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <a href="#hero" className="nav-logo">Bryant<span>.dev</span></a>
+    <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <nav className="nav-container" aria-label="Principal">
+        <a href="#hero" className="nav-logo">
+          <span className="prompt">~/</span>bryant<span className="cursor">_</span>
+        </a>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {links.map(({ href, label }) => (
             <li key={href}>
-              <a href={href} onClick={() => setMenuOpen(false)}>{label}</a>
+              <a href={href} onClick={() => setMenuOpen(false)}>
+                {label}
+              </a>
             </li>
           ))}
         </ul>
 
         <button
+          type="button"
           className={`hamburger ${menuOpen ? 'open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menú"
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }

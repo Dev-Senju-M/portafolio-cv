@@ -1,4 +1,3 @@
-/* App-level resets — component styles live in each component file */
-#root {
-  min-height: 100vh;
+main {
+  overflow-x: hidden;
 }

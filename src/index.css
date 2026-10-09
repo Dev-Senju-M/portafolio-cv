@@ -5,57 +5,83 @@
 }
 
 :root {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
-  --border: #334155;
-  --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --bg: #0a0d12;
+  --surface: #10151c;
+  --surface-2: #151b24;
+  --border: #212a36;
+  --text: #e6edf3;
+  --muted: #8b98a9;
+  --accent: #3ddc97;
+  --accent-soft: rgba(61, 220, 151, 0.1);
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
+  font-family: var(--sans);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 section {
-  padding: 5rem 1rem;
+  padding: 5.5rem 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.75rem;
+}
+
+.section-index {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--accent);
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 3rem;
+  letter-spacing: -0.01em;
 }
 
-.section-title span {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  align-self: center;
 }
 
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--gradient);
-  margin: 0.75rem auto 0;
-  border-radius: 2px;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

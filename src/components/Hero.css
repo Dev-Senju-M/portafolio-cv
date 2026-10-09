@@ -2,124 +2,139 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  padding: 6rem 1.5rem 4rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 7rem 0 4rem;
+  background:
+    radial-gradient(60rem 30rem at 85% 10%, rgba(61, 220, 151, 0.06), transparent 60%),
+    var(--bg);
 }
 
-.hero-content {
-  max-width: 600px;
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
 }
 
 .hero-greeting {
+  font-family: var(--mono);
   color: var(--accent);
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
 .hero-name {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.3rem, 5.5vw, 3.6rem);
   font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--muted);
   margin-bottom: 1.25rem;
 }
 
 .hero-desc {
-  color: var(--text-secondary);
-  max-width: 480px;
+  color: var(--muted);
+  max-width: 34rem;
   margin-bottom: 2rem;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 0.9rem;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 0.75rem 1.75rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
+  border: 1px solid var(--accent);
+  transition: background 0.2s, color 0.2s;
 }
 
 .btn-primary {
-  background: var(--gradient);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  background: var(--accent);
+  color: #06140d;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 28px rgba(99, 102, 241, 0.5);
+  background: #62eab0;
 }
 
 .btn-outline {
-  border: 2px solid var(--accent);
   color: var(--accent);
   background: transparent;
 }
 
 .btn-outline:hover {
-  background: rgba(99, 102, 241, 0.1);
+  background: var(--accent-soft);
 }
 
-.hero-badge {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: var(--bg-secondary);
-  border: 2px solid var(--border);
+/* Ventana de terminal */
+.terminal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.terminal-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  gap: 7px;
+  padding: 0.7rem 1rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
 }
 
-.hero-badge span {
-  font-size: 4rem;
-  font-weight: 800;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-family: monospace;
+.terminal-bar .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #2b3644;
 }
 
-@media (max-width: 768px) {
+.terminal-file {
+  margin-left: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.terminal-body {
+  padding: 1.25rem 1.25rem 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.8;
+  overflow-x: auto;
+  color: var(--text);
+}
+
+.terminal-body .k { color: #c792ea; }
+.terminal-body .v { color: #82aaff; }
+.terminal-body .p { color: #9fb4cc; }
+.terminal-body .s { color: var(--accent); }
+.terminal-body .b { color: #ffcb6b; }
+
+@media (max-width: 860px) {
   .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 2rem;
     min-height: auto;
-    padding-top: 8rem;
+    padding-top: 6.5rem;
   }
 
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-badge {
-    width: 150px;
-    height: 150px;
-  }
-
-  .hero-badge span {
-    font-size: 2.8rem;
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
