@@ -2,26 +2,42 @@ import './Projects.css'
 
 const projects = [
   {
+    name: 'San Bartolo Asistencias',
+    badge: 'Proyecto propio · full stack · en uso',
+    desc: 'Sistema web en uso por una hermandad de 59 personas para controlar la asistencia: roles y permisos, actividades, avisos, comisiones, auditoría y reporte mensual en Excel. Lo desarrollé completo: API en Express y TypeScript con PostgreSQL y sesiones seguras, e interfaz en React con pruebas.',
+    tags: ['React', 'TypeScript', 'Express', 'PostgreSQL', 'Drizzle ORM', 'Tailwind', 'Docker', 'Railway'],
+    url: 'https://github.com/Dev-Senju-M/San-Bartolo-Asistencias-',
+    destacado: true,
+  },
+  {
+    name: 'ShadowBot REVO',
+    badge: 'Proyecto propio · bot de Discord',
+    desc: 'Bot todo en uno para comunidades gamer: moderación, niveles, torneos, economía, música y registros de seguridad. Incluye chat con IA (OpenAI), alertas de Twitch y publicación automática de la tienda de Fortnite. 110 commits, desplegado en Railway.',
+    tags: ['Node.js', 'discord.js', 'OpenAI API', 'Railway'],
+    url: 'https://github.com/Dev-Senju-M/ShadowBot-REVO',
+    destacado: true,
+  },
+  {
+    name: 'Centuria Inscripciones',
+    badge: 'Proyecto propio · full stack · en pruebas',
+    desc: 'Formulario público de inscripción y panel de administración para la Centuria Romana de San Bartolo 2026. Lo desarrollé completo: registro con fotos y documentos, gráficos, exportación a Excel y pruebas unitarias, de integración y de extremo a extremo.',
+    tags: ['Next.js', 'React', 'Prisma', 'PostgreSQL', 'Docker', 'Playwright'],
+    url: 'https://github.com/Dev-Senju-M/centuria-inscripciones',
+    destacado: true,
+  },
+  {
+    name: 'Nexus Solutions',
+    badge: 'Emprendimiento en equipo',
+    desc: 'Emprendimiento de desarrollo web con dos compañeros, donde participo como desarrollador full stack: sitios, tiendas en línea y paneles administrativos a medida, en Next.js.',
+    tags: ['Next.js', 'Full stack', 'Web'],
+    demo: 'https://nexus-solutions.site/',
+  },
+  {
     name: 'Sistema de Soporte Técnico IT',
-    badge: 'Proyecto universitario · Programación III',
-    desc: 'Sistema distribuido en Java para gestionar tickets de soporte técnico en cinco nodos que se comunican por sockets TCP. Usa colas (general, prioridad y especial), un hilo por cliente y un árbol B+ para buscar el historial por DPI.',
-    tags: ['Java 21', 'JavaFX', 'Sockets TCP', 'Hilos', 'Árbol B+', 'Maven'],
+    badge: 'Proyecto universitario · UMG · 2026',
+    desc: 'Trabajo del curso Programación III: sistema distribuido en Java 21 y JavaFX con cinco nodos por sockets TCP, colas de atención, un hilo por cliente y árbol B+ para buscar el historial por DPI.',
+    tags: ['Java 21', 'JavaFX', 'Maven', 'Sockets TCP', 'Hilos', 'Árbol B+'],
     url: 'https://github.com/Dev-Senju-M/SoporteTecnicoIT',
-  },
-  {
-    name: 'Jarvis AI',
-    badge: 'Proyecto personal',
-    desc: 'Asistente de voz con inteligencia artificial inspirado en J.A.R.V.I.S. Funciona 100% local y gratis, con una estructura separada en núcleo, habilidades e interfaz.',
-    tags: ['Python', 'IA', 'Voz', 'Local'],
-    url: 'https://github.com/Dev-Senju-M/jarvis-ai',
-  },
-  {
-    name: 'Emprendedores',
-    badge: 'Proyecto universitario',
-    desc: 'Plataforma web orientada al emprendimiento para conectar ideas, recursos y oportunidades de negocio.',
-    tags: ['Web', 'Netlify'],
-    url: 'https://github.com/Dev-Senju-M/Emprendedores',
-    demo: 'https://proyectoeprendedores.netlify.app/',
   },
 ]
 
@@ -50,19 +66,24 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid">
-          {projects.map(({ name, badge, desc, tags, url, demo }, i) => (
-            <article className={`project-card ${i === 0 ? 'featured' : ''}`} key={name}>
+          {projects.map(({ name, badge, desc, tags, url, demo, destacado }, i) => (
+            <article
+              className={`project-card ${i === 0 ? 'featured' : ''} ${destacado ? 'highlight' : ''}`}
+              key={name}
+            >
               <div className="project-top">
                 <span className="project-badge">{badge}</span>
                 <div className="project-icons">
                   {demo && (
-                    <a href={demo} target="_blank" rel="noopener noreferrer" className="project-link" aria-label={`Ver demo de ${name}`}>
+                    <a href={demo} target="_blank" rel="noopener noreferrer" className="project-link" aria-label={`Ver sitio de ${name}`}>
                       <ExternalIcon />
                     </a>
                   )}
-                  <a href={url} target="_blank" rel="noopener noreferrer" className="project-link" aria-label={`Ver ${name} en GitHub`}>
-                    <GithubIcon />
-                  </a>
+                  {url && (
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="project-link" aria-label={`Ver ${name} en GitHub`}>
+                      <GithubIcon />
+                    </a>
+                  )}
                 </div>
               </div>
               <h3 className="project-name">{name}</h3>

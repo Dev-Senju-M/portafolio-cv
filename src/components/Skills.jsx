@@ -1,10 +1,11 @@
 import './Skills.css'
 
 const groups = [
-  { title: 'Lenguajes', items: ['Java', 'Python', 'JavaScript'] },
-  { title: 'Web', items: ['HTML', 'CSS', 'React', 'Vite'] },
-  { title: 'Herramientas', items: ['Git', 'GitHub', 'Maven', 'JavaFX', 'Terminal'] },
-  { title: 'Soporte técnico', items: ['Mantenimiento de equipo', 'Software básico', 'Resolución de problemas'] },
+  { title: 'Lenguajes', items: ['Java', 'Python', 'JavaScript', 'TypeScript'] },
+  { title: 'Front-end', items: ['React', 'Next.js', 'Vite', 'Tailwind', 'HTML', 'CSS'] },
+  { title: 'Back-end y datos', items: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'Drizzle ORM'] },
+  { title: 'Herramientas', items: ['Git', 'GitHub', 'Docker', 'Railway', 'Vitest', 'Playwright'] },
+  { title: 'Otros', items: ['Bots de Discord', 'Sockets TCP', 'Hilos', 'Estructuras de datos', 'Soporte técnico'] },
 ]
 
 export default function Skills() {

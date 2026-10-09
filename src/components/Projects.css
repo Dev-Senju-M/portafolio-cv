@@ -23,6 +23,14 @@
   grid-column: 1 / -1;
 }
 
+.project-card.highlight {
+  border-color: rgba(61, 220, 151, 0.35);
+}
+
+.project-card.featured .project-name {
+  font-size: 1.45rem;
+}
+
 .project-top {
   display: flex;
   justify-content: space-between;

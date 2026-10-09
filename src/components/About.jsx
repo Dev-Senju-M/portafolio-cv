@@ -4,7 +4,7 @@ const facts = [
   { key: 'Estudios', value: 'Ingeniería en Sistemas e Informática, Universidad Mariano Gálvez (2024 – actualidad)' },
   { key: 'Bachillerato', value: 'Ciencias y Letras con Orientación Científica, IGA (2021)' },
   { key: 'Experiencia', value: 'Operativo de bodega en La Bodegona: pedidos, logística e inventario' },
-  { key: 'Idiomas', value: 'Español (nativo)' },
+  { key: 'Idiomas', value: 'Español (nativo) · Inglés (básico-intermedio)' },
 ]
 
 export default function About() {
@@ -20,9 +20,10 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              Soy estudiante de <strong>Ingeniería en Sistemas e Informática</strong> con interés
-              en programación, diseño web y soporte técnico. En la universidad he trabajado en
-              proyectos con Java, estructuras de datos y comunicación en red.
+              Soy estudiante de <strong>Ingeniería en Sistemas e Informática</strong> y busco mi
+              primer puesto como <strong>desarrollador junior</strong> (front-end o back-end) o
+              analista. He desarrollado de principio a fin sistemas web full stack, incluido uno
+              que usa una hermandad de 59 personas.
             </p>
             <p>
               Me considero <strong>responsable, puntual y orientado a resolver problemas</strong>.
